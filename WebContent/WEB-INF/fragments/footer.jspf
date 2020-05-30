@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="navbar-text">Events System, version 0.0.1</p>					
+        <p class="navbar-text">Remigiusz Skalski, all rights reserved</p>
+         <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="${pageContext.request.contextPath}/archives">Archives</a></li>
+         </ul>
+      </div>
+    </footer>

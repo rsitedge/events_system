@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+    <nav class = "navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a href="${pageContext.request.contextPath}" class="navbar-brand" >Events System</a>
+
+    	 <div class="col-sm-3 col-md-3 col-md-offset-0 v-centered">
+           <form class="form-search" method="get" action="search">
+				<input name="inputSearch" type="text" class="form-control" placeholder="search ..."/>
+		   </form>
+		 </div>
+    
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="glyphicon glyphicon-list"></span>
+        </button>
+
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-right">		          											
+            <li class="active"><a href="${pageContext.request.contextPath}/new_event">new Event</a></li>
+            <li><a href="${pageContext.request.contextPath}/register">Sign in</a></li>
+            <c:choose>
+            	<c:when test="${not empty sessionScope.user}">
+            		<li><a href="${pageContext.request.contextPath}/logout">Log out (${sessionScope.user.username})</a></li>
+            	</c:when>
+            	<c:otherwise>
+            		<li><a href="${pageContext.request.contextPath}/login">Log in</a></li>
+            	</c:otherwise>
+            </c:choose>
+          </ul>
+        </div>
+      </div>
+    </nav>
